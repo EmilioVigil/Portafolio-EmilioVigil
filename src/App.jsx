@@ -2,20 +2,23 @@
 import { NavBar } from './components/navBar/NavBar'
 import { SectionHome } from './components/home/Home';
 import { Skills } from './components/skills/Skills';
-
+import { MainPrincipal } from './App.styled';
 
 
 function App() {
 
   return (
-    <>
-      <NavBar />
-      <SectionHome />
-      <Skills />
+    <div>
+      <MainPrincipal>
+        <NavBar />
+        <SectionHome />
+        <Skills />
 
 
+      </MainPrincipal>
 
-    </>
+    </div>
+
 
   )
 }

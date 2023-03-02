@@ -2,12 +2,14 @@ import styled from 'styled-components';
 
 
 const Home = styled.section`
-    padding: 10rem 4rem;
+    padding: 5rem 4rem;
     margin: 0;
     display: flex;
     align-items: center;
     justify-content: center;
-
+    background-color: #F0F8FF;
+    
+    
     .home-cta{
         .home-title{ 
             font-size: 2rem;
@@ -53,13 +55,14 @@ const Home = styled.section`
             transition: .5s;
             &:hover{
                 background-color: white;
-                color: rgb(70 , 0 , 57);
+                color: black;
                 border: 1px solid  rgb(70 , 0 , 57);
             }
 
         }
 
         a{
+            font-size: 1.8rem;
             margin-right: 1rem;
             width: 1rem;
 

@@ -1,13 +1,12 @@
 import styled from 'styled-components'
 
 const Nav = styled.nav`
-
     height: 10vh;
-    border-bottom: 1px solid black;
     display: flex;
     justify-content: space-around;
     align-items: center;
-
+    background-color: #F0F8FF;
+    
     .logo{
         display: flex;
         flex: 1;
@@ -95,7 +94,6 @@ const Nav = styled.nav`
 
 const BgDiv = styled.div`
     position: absolute;
-    background-color: #613B77;
     top: -1000px;
     left : -1000px;
     transition: all .6s ease;
