@@ -27,7 +27,7 @@ export function NavBar() {
                 clicked ? <div className={`links ${clicked ? 'active' : ''}`} >
                     <a onClick={handleClick} href="#">Home</a>
                     <a onClick={handleClick} href="#skills">Skills</a>
-                    <a onClick={handleClick} href="#">Projects</a>
+                    <a onClick={handleClick} href="#p">Projects</a>
                     <a onClick={handleClick} href="#">Contact</a>
                 </div> : <div className={`links ${clicked ? 'active' : ''}`} >
                     <a href="#">Home</a>

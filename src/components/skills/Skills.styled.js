@@ -3,9 +3,7 @@ import styled from 'styled-components';
 
 
 const SectionSkills = styled.section`
-    height: 100%;
-    /* background-color: #521C56; */
-    
+    height: 100%;    
     .sec-skills-title{
         display: flex;
         padding: 1rem;
@@ -41,7 +39,7 @@ const SectionSkills = styled.section`
 
             &:hover{
                 font-size: 8rem;
-                color : #FFFB00;
+                color : #521C56;
             }
         }
     }
