@@ -5,9 +5,10 @@ import CV from '../../assets/EmilioVigilCv.pdf'
 
 import { ImLinkedin } from "react-icons/im";
 import { GoMarkGithub } from "react-icons/go";
+
 export function SectionHome() {
     return (
-        <Home>
+        <Home id="home">
             <div className="home-cta">
                 <div className='home-title'>
                     <h2>¡Hola!</h2>

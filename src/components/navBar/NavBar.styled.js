@@ -1,12 +1,14 @@
 import styled from 'styled-components'
 
 const Nav = styled.nav`
+    position : fixed;
     height: 10vh;
+    width: 100%;
     display: flex;
     justify-content: space-around;
     align-items: center;
-    background-color: #F0F8FF;
-    
+    background-color: transparent;
+    z-index: 10;
     .logo{
         display: flex;
         flex: 1;
@@ -24,7 +26,8 @@ const Nav = styled.nav`
         color : black;
         text-decoration: none;
         margin-right: 5rem;
-        
+
+
     }
 
     .links{

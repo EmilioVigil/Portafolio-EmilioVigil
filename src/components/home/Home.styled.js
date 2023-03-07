@@ -2,7 +2,8 @@ import styled from 'styled-components';
 
 
 const Home = styled.section`
-    padding: 5rem 4rem;
+    padding: 10rem 8rem;
+    height: 100%;
     margin: 0;
     display: flex;
     align-items: center;
@@ -25,6 +26,7 @@ const Home = styled.section`
             h3{
                 font-size: 1.7rem;
                 margin-top: 4rem;
+                padding-bottom: 1rem;
             }
 
             p{
@@ -46,6 +48,7 @@ const Home = styled.section`
         align-items: center;
         
         .btn-dowload{
+            font-size: .8rem;
             color: white;
             border:none;
             padding: 0.3rem 2rem;
@@ -53,6 +56,7 @@ const Home = styled.section`
             background-color: rgb(70 , 0 , 57);
             cursor: pointer;
             transition: .5s;
+            
             &:hover{
                 background-color: white;
                 color: black;

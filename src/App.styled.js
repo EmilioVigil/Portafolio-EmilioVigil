@@ -6,8 +6,8 @@ const MainPrincipal = styled.main`
    
     *{
         font-family: 'Poppins', sans-serif;
+        
     }
-    
     
 `
 

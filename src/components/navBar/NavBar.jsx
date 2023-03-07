@@ -25,15 +25,15 @@ export function NavBar() {
             </div>
             {
                 clicked ? <div className={`links ${clicked ? 'active' : ''}`} >
-                    <a onClick={handleClick} href="#">Home</a>
-                    <a onClick={handleClick} href="#skills">Skills</a>
-                    <a onClick={handleClick} href="#p">Projects</a>
-                    <a onClick={handleClick} href="#">Contact</a>
+                    <a onClick={handleClick} href="#home">Sobre Mi</a>
+                    <a onClick={handleClick} href="#skills">Tecnologías</a>
+                    <a onClick={handleClick} href="#projects">Proyectos</a>
+                    <a onClick={handleClick} href="#contact">Contacto</a>
                 </div> : <div className={`links ${clicked ? 'active' : ''}`} >
-                    <a href="#">Home</a>
-                    <a href="#skills">Skills</a>
-                    <a href="#">Projects</a>
-                    <a href="#">Contact</a>
+                    <a href="#home">Sobre Mi</a>
+                    <a href="#skills">Tecnologias</a>
+                    <a href="#projects">Proyectos</a>
+                    <a href="#contact">Contacto</a>
                 </div>
             }
 

@@ -4,26 +4,28 @@ import styled from 'styled-components';
 
 const SectionSkills = styled.section`
     height: 100%;    
+    padding-bottom: 10rem;
+    
     .sec-skills-title{
         display: flex;
-        padding: 1rem;
-        font-size: 3rem;
+        padding: 5rem;
         font-weight: 600;
         align-items: center;
         justify-content: center;
         h3{
+
             color: #521C56;
+            font-size: 4rem;
         }
     }
     
-
-    
     .sec-skills-icon{
-            margin: auto;
+            margin : auto;
             width: 20vw;
             height: 100%;
             cursor : pointer;
-        .sec-skills-container{
+        
+            .sec-skills-container{
             display: grid;
             grid-template-columns: auto auto auto auto;
             justify-content: center;

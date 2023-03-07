@@ -3,7 +3,7 @@ import { SectionProjects } from "./Projects.styled"
 import '../../../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import { Carousel } from 'react-bootstrap';
 import prueba from '../../images/prueba.jpg'
-
+import { FcBriefcase } from "react-icons/fc";
 
 // Projects
 const projects = [
@@ -11,40 +11,44 @@ const projects = [
         title: 'Weather App',
         description: 'Descripcion de prueba del componente',
         image: prueba,
-        deployLink: '',
+        deployLink: '1',
         codeLink: ''
     }, {
         title: 'PokeApp',
         description: 'Descripcion de prueba del componente',
         image: prueba,
-        deployLink: '',
+        deployLink: '2',
         codeLink: ''
     }, {
         title: 'Wine Supply',
         description: 'Descripcion de prueba del componente',
         image: prueba,
-        deployLink: '',
+        deployLink: '3',
         codeLink: ''
     }, {
         title: 'Tic-Tac-Toe',
         description: 'Descripcion de prueba del componente',
         image: prueba,
-        deployLink: '',
+        deployLink: '4',
         codeLink: ''
     }
 ]
 
-function Projects() {
+export function Projects() {
     return (
-        <SectionProjects>
-            <h3>
-                PROYECTOS
-            </h3>
+        <SectionProjects id="projects">
+            <div>
+                <h3>
+                    PROYECTOS
+                    <FcBriefcase className="icono" />
+                </h3>
+            </div>
+
             <Carousel className='carousel-container' >
                 {
                     projects.map(p => {
                         return (
-                            <Carousel.Item className="carousel-item">
+                            <Carousel.Item className="carousel-item" key={p.deployLink}>
                                 <img
                                     className="d-block w-100"
                                     src={p.image}
@@ -69,4 +73,3 @@ function Projects() {
     );
 }
 
-export default CarouselFadeExample;

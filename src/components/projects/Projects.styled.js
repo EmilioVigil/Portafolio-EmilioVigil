@@ -6,9 +6,17 @@ const SectionProjects = styled.section`
     padding: 4rem;
 
     h3{
-        text-align: center;
+        display: flex;
         font-size: 3rem;
-        padding-bottom: 2rem;
+        padding-bottom: 4rem;
+        color : #521C56;
+        align-items: center;
+        justify-content: center;
+        
+        .icono{
+            margin-left: 1rem;
+        }
+
     }
 
     .carousel-container{
