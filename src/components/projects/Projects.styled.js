@@ -21,7 +21,7 @@ const SectionProjects = styled.section`
 
     .carousel-container{
         margin : auto;
-        width: 50rem;
+        width: 40rem;
 
         .carousel-item{
             height: 40rem;

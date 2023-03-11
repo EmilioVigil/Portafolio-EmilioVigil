@@ -1,20 +1,22 @@
-import { Nav, BgDiv } from "./NavBar.styled"
-import { BurguerButton } from "./BurguerButton"
-import { useState } from "react"
+import { NavContainer } from "./NavBar.styled"
+import React, { useState } from 'react';
 
-
+// Navbar responsive
+import { NavBarResponsive } from "./NavBarResponsive";
 
 export function NavBar() {
 
-    const [clicked, setClicked] = useState(false);
+    const [active, setActive] = useState('')
 
-    const handleClick = () => {
-        setClicked(!clicked)
+    const handleClick = (e) => {
+        setActive(e.target.innerText);
     }
 
+
+
     return (
-        <Nav >
-            <div className="logo">
+        <NavContainer >
+            <h3 className="logo">
                 <a href="https://www.linkedin.com/in/emilio-vigil-b764201a1/" target={"_blank"}>
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-rocket-takeoff" viewBox="0 0 16 16">
                         <path d="M9.752 6.193c.599.6 1.73.437 2.528-.362.798-.799.96-1.932.362-2.531-.599-.6-1.73-.438-2.528.361-.798.8-.96 1.933-.362 2.532Z" />
@@ -22,27 +24,21 @@ export function NavBar() {
                         <path d="M7.009 12.139a7.632 7.632 0 0 1-1.804-1.352A7.568 7.568 0 0 1 3.794 8.86c-1.102.992-1.965 5.054-1.839 5.18.125.126 3.936-.896 5.054-1.902Z" />
                     </svg>
                 </a>
-            </div>
-            {
-                clicked ? <div className={`links ${clicked ? 'active' : ''}`} >
-                    <a onClick={handleClick} href="#home">Sobre Mi</a>
-                    <a onClick={handleClick} href="#skills">Tecnologías</a>
-                    <a onClick={handleClick} href="#projects">Proyectos</a>
-                    <a onClick={handleClick} href="#contact">Contacto</a>
-                </div> : <div className={`links ${clicked ? 'active' : ''}`} >
-                    <a href="#home">Sobre Mi</a>
-                    <a href="#skills">Tecnologias</a>
-                    <a href="#projects">Proyectos</a>
-                    <a href="#contact">Contacto</a>
-                </div>
-            }
+            </h3>
+            <nav className="nav-links">
+                <a onClick={handleClick} href="#home" className={active === 'Sobre Mi' ? 'active' : ''}  >Sobre Mi</a>
+                <a onClick={handleClick} href="#skills" className={active === 'Tecnologías' ? 'active' : ''} >Tecnologías</a>
+                <a onClick={handleClick} href="#projects" className={active === 'Proyectos' ? 'active' : ''} >Proyectos</a>
+                <a onClick={handleClick} href="#contact" className={active === 'Contacto' ? 'active' : ''} >Contacto</a>
+            </nav>
+
+            <NavBarResponsive className="nav-responsive" />
+
+        </NavContainer>
 
 
-            <div className="burguer">
-                <BurguerButton clicked={clicked} handleClick={handleClick} />
-            </div>
-
-            <BgDiv className={`initial ${clicked ? 'active' : ''}`} ></BgDiv>
-        </Nav>
     )
 }
+
+
+
