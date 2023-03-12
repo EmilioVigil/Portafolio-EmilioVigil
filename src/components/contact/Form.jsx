@@ -37,7 +37,7 @@ export const ContactForm = () => {
 
     return (
         <SectionForm>
-            <Form ref={form} onSubmit={sendEmail}>
+            <Form ref={form} onSubmit={sendEmail} className="form-container">
                 <Form.Group className="mb-3" controlId="name">
                     <Form.Label>Nombre</Form.Label>
                     <Form.Control type="text" name="user_name" placeholder="nombre" required />
@@ -54,7 +54,7 @@ export const ContactForm = () => {
                     <Form.Control as="textarea" rows={3} name="message" required />
                 </Form.Group>
 
-                <Button variant="outline-primary" type="submit" value="Send" >Enviar</Button>
+                <Button variant="outline-primary" type="submit" value="Send" className='form-btn' >Enviar</Button>
             </Form>
 
             <Modal show={show} onHide={handleClose}>

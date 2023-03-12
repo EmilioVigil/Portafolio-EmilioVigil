@@ -17,7 +17,9 @@ const Footer = styled.footer`
             color : #1D9BF0;
         }
 
-
+    @media (max-width : 768px){
+        width: 100%;
+    }
 `
 
 

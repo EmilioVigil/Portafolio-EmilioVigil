@@ -48,21 +48,16 @@ const SectionSkills = styled.section`
 
 
 
-    /* @media (max-width : 768px){
-        height: 100%;
-        text-align: center;
+    @media (max-width : 768px){
 
-        .sec-skills-icon{
-            display: flex;
-            flex-direction: column;
-            
-            .icon{
-                margin:auto;
-            }
+        
+        .sec-skills-icon .sec-skills-container{
 
+            grid-template-columns: auto auto;
         }
+        
 
-    } */
+    }
 
 
 `

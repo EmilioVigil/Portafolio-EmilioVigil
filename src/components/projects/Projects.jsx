@@ -54,7 +54,7 @@ export function Projects() {
                                     src={p.image}
                                     alt="First slide"
                                 />
-                                <Carousel.Caption>
+                                <Carousel.Caption className="carousel-description" >
                                     <h3>{p.title}</h3>
                                     <p>{p.description}</p>
                                     <div>

@@ -72,6 +72,22 @@ const SectionProjects = styled.section`
 
         }
     }
+
+
+
+    @media(max-width : 768px){
+        h3{
+            text-align: center;
+        }
+
+        .carousel-container{           
+            width: 100%;
+
+
+        }
+
+    }
+
     
 `
 

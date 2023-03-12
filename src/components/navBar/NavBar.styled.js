@@ -75,6 +75,10 @@ const NavContainer = styled.header`
         .nav-links{
             display : none;
         }
+
+        
+
+
     }
 
 

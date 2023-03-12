@@ -34,6 +34,7 @@ export function NavBar() {
 
             <NavBarResponsive className="nav-responsive" />
 
+
         </NavContainer>
 
 

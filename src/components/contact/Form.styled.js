@@ -9,6 +9,25 @@ const SectionForm = styled.div`
     }
 
 
+    @media (max-width : 768px){
+        width: 100%;
+
+
+        .form-container{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+        }
+        
+        .mb-3{
+            width: 20rem;
+        }
+
+
+
+    }
+
 
 `
 

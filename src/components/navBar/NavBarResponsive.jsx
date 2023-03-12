@@ -1,8 +1,8 @@
-import Offcanvas from 'react-bootstrap/Offcanvas';
 import React, { useState } from 'react';
 import styled from 'styled-components';
+import { MdArrowDownward } from "react-icons/md";
+import { AiOutlineClose } from "react-icons/ai";
 
-import { MdOutlineWaves, MdArrowDownward } from "react-icons/md";
 
 export function NavBarResponsive() {
     // menu responsive
@@ -13,41 +13,41 @@ export function NavBarResponsive() {
 
     return (
         <NavContainer>
-            <button onClick={handleShow} className="nav-bar-btn-responsive" >
-                <MdArrowDownward />
-            </button >
+            {
+                show ?
+                    <nav className='nav-container-responsive'>
+                        <button onClick={handleClose} className="nav-bar-btn-x-responsive">
+                            <AiOutlineClose />
+                        </button>
+                        <ul>
+                            <li>
+                                <a href="#home" >Sobre Mi</a>
+                            </li>
+                            <li>
+                                <a href="#skills" >Tecnologías</a>
+                            </li>
+                            <li>
+                                <a href="#projects" >Proyectos</a>
+                            </li>
+                            <li>
+                                <a href="#contact" >Contacto</a>
+                            </li>
+                        </ul>
+                    </nav>
+                    :
+                    <button onClick={handleShow} className="nav-bar-btn-responsive" >
+                        <MdArrowDownward />
+                    </button >
 
-            <Offcanvas show={show} onHide={handleClose} placement='top' className={show ? 'nav-bar-responsive' : ''} >
-                <Offcanvas.Header closeButton>
-                    <Offcanvas.Title>Portafolio Emilio Vigil</Offcanvas.Title>
-                </Offcanvas.Header>
-                <Offcanvas.Body>
-                    <ul>
-                        <li>
-                            <a href="#home" >Sobre Mi</a>
-                        </li>
-
-                        <li>
-                            <a href="#skills" >Tecnologías</a>
-                        </li>
-
-                        <li>
-                            <a href="#projects" >Proyectos</a>
-                        </li>
-
-                        <li>
-                            <a href="#contact" >Contacto</a>
-                        </li>
-                    </ul>
-                </Offcanvas.Body>
-            </Offcanvas>
+            }
         </NavContainer>
     )
 }
 
-const NavContainer = styled.header`
+const NavContainer = styled.div`
     display : none;
     
+
     .nav-bar-btn-responsive{
         border : none;
         padding : .5rem;
@@ -56,14 +56,42 @@ const NavContainer = styled.header`
         color : black;
         background-color: transparent;
         font-size : 2rem;
+        position: absolute;
+        right: 0;
     }
 
-    @media (max-width : 768px){
-        display: flex;
-        align-items: flex-end;
-        justify-content: end;
+    @media (max-width : 768px){   
         width: 100%;
+        display: block;
+        position : absolute;
         padding-bottom: 2rem;
+
+        .nav-container-responsive{
+            background-color: rgb(255, 255, 255);
+            display: flex;
+            flex-direction: column;
+            ul{
+                list-style: none;
+                
+                li{
+                    padding : 1rem;
+                }
+            }
+            transition: 1s all;
+        }
+        
+
+
+        .nav-bar-btn-x-responsive{
+            /* padding: 1rem; */
+            color : red;
+            border : none;
+            background-color: transparent;
+            font-size: 2rem;
+            position: absolute;
+            right: 0;
+            top : 0;
+        }
 
     }
 

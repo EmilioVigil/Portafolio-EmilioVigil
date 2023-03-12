@@ -4,6 +4,7 @@ import styled from 'styled-components';
 const Home = styled.section`
     padding: 10rem 8rem;
     height: 100%;
+    width : 100%;
     margin: 0;
     display: flex;
     align-items: center;
@@ -78,9 +79,14 @@ const Home = styled.section`
 
     /* Responsive  */
     @media (max-width : 768px){
+
         padding: 2rem;
         text-align: center;
         
+        .home-title{
+            margin-top: 5rem;
+        }
+
         .home-image{
             display: none;
         }
