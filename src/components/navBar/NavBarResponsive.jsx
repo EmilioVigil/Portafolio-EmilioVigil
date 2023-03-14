@@ -5,7 +5,8 @@ import { AiOutlineClose } from "react-icons/ai";
 
 
 export function NavBarResponsive() {
-    // menu responsive
+
+    // STATE
     const [show, setShow] = useState(false);
 
     const handleClose = () => setShow(false);
@@ -21,16 +22,16 @@ export function NavBarResponsive() {
                         </button>
                         <ul>
                             <li>
-                                <a href="#home" >Sobre Mi</a>
+                                <a href="#home" onClick={handleClose} >Sobre Mi</a>
                             </li>
                             <li>
-                                <a href="#skills" >Tecnologías</a>
+                                <a href="#skills" onClick={handleClose} >Tecnologías</a>
                             </li>
                             <li>
-                                <a href="#projects" >Proyectos</a>
+                                <a href="#projects" onClick={handleClose} >Proyectos</a>
                             </li>
                             <li>
-                                <a href="#contact" >Contacto</a>
+                                <a href="#contact" onClick={handleClose} >Contacto</a>
                             </li>
                         </ul>
                     </nav>

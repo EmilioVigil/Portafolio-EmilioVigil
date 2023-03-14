@@ -1,42 +1,33 @@
+import { useEffect, useRef } from 'react';
+import { Card } from './Card';
 // Styles
+import ScrollReveal from 'scrollreveal';
 import { SectionProjects } from "./Projects.styled"
 import '../../../node_modules/bootstrap/dist/css/bootstrap.min.css';
-import { Carousel } from 'react-bootstrap';
-import prueba from '../../images/prueba.jpg'
 import { FcBriefcase } from "react-icons/fc";
 
 // Projects
-const projects = [
-    {
-        title: 'Weather App',
-        description: 'Descripcion de prueba del componente',
-        image: prueba,
-        deployLink: '1',
-        codeLink: ''
-    }, {
-        title: 'PokeApp',
-        description: 'Descripcion de prueba del componente',
-        image: prueba,
-        deployLink: '2',
-        codeLink: ''
-    }, {
-        title: 'Wine Supply',
-        description: 'Descripcion de prueba del componente',
-        image: prueba,
-        deployLink: '3',
-        codeLink: ''
-    }, {
-        title: 'Tic-Tac-Toe',
-        description: 'Descripcion de prueba del componente',
-        image: prueba,
-        deployLink: '4',
-        codeLink: ''
-    }
-]
+import { projects } from "../../logic/Projects";
+
+
 
 export function Projects() {
+
+    const animation = useRef(null);
+    useEffect(() => {
+        ScrollReveal().reveal(animation.current, {
+            duration: 1000,
+            opacity: 0,
+            scale: 0.5,
+            distance: '-15rem',
+            easing: 'cubic-bezier(0.5, 0, 0, 1)',
+            viewFactor: 0.5,
+        });
+
+    }, [])
+
     return (
-        <SectionProjects id="projects">
+        <SectionProjects id="projects" ref={animation}>
             <div>
                 <h3>
                     PROYECTOS
@@ -44,31 +35,20 @@ export function Projects() {
                 </h3>
             </div>
 
-            <Carousel className='carousel-container' >
+            <div className="card">
                 {
                     projects.map(p => {
                         return (
-                            <Carousel.Item className="carousel-item" key={p.deployLink}>
-                                <img
-                                    className="d-block w-100"
-                                    src={p.image}
-                                    alt="First slide"
-                                />
-                                <Carousel.Caption className="carousel-description" >
-                                    <h3>{p.title}</h3>
-                                    <p>{p.description}</p>
-                                    <div>
-                                        <button><a href={p.deployLink} >Deploy</a></button>
-                                        <button><a href={p.codeLink} >Código</a></button>
-                                    </div>
-                                </Carousel.Caption>
-                            </Carousel.Item>
+                            <Card img={p.image} title={p.title} description={p.description} deployLink={p.deployLink}
+                                codeLink={p.codeLink} key={p.deploy}
+                            />
+
                         )
                     })
                 }
-            </Carousel>
-
+            </div>
         </SectionProjects>
+
 
     );
 }

@@ -9,7 +9,6 @@ import { SectionRedes } from './components/redes/Redes';
 import { SectionFooter } from './components/footer/Footer';
 
 
-
 function App() {
 
   return (

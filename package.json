@@ -16,6 +16,7 @@
     "react-bootstrap": "^2.7.2",
     "react-dom": "^18.2.0",
     "react-icons": "^4.7.1",
+    "scrollreveal": "^4.0.9",
     "styled-components": "^5.3.6"
   },
   "devDependencies": {

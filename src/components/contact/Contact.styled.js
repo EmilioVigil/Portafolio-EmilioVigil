@@ -9,7 +9,7 @@ const ContactContainer = styled.div`
     
     h1{
         text-align: center;
-        padding-top: 2rem;
+        padding-top: 3rem;
         padding-bottom: 2rem;
     }
     
