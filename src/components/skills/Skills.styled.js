@@ -50,6 +50,12 @@ const SectionSkills = styled.section`
 
     @media (max-width : 768px){
 
+        .sec-skills-title{
+            h3{
+                font-size: 2rem;
+
+            }
+        }
         
         .sec-skills-icon .sec-skills-container{
 
