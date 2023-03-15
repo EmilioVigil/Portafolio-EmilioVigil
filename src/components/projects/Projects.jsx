@@ -23,7 +23,7 @@ export function Projects() {
                     projects.map(p => {
                         return (
                             <Card img={p.image} title={p.title} description={p.description} deployLink={p.deployLink}
-                                codeLink={p.codeLink} key={p.deploy}
+                                codeLink={p.codeLink} key={p.codeLink}
                             />
 
                         )
