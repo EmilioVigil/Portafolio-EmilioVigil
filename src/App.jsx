@@ -12,7 +12,7 @@ import { SectionFooter } from './components/footer/Footer';
 function App() {
 
   return (
-    <div>
+    <>
       <MainPrincipal>
 
         {/* NAV */}
@@ -37,7 +37,7 @@ function App() {
         <SectionFooter />
       </MainPrincipal>
 
-    </div>
+    </>
 
 
   )

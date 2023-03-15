@@ -1,4 +1,5 @@
 import { Card } from './Card';
+
 // Styles
 import { SectionProjects } from "./Projects.styled"
 import '../../../node_modules/bootstrap/dist/css/bootstrap.min.css';
@@ -7,11 +8,7 @@ import { FcBriefcase } from "react-icons/fc";
 // Projects
 import { projects } from "../../logic/Projects";
 
-
-
 export function Projects() {
-
-
     return (
         <SectionProjects id="projects" >
             <div>
@@ -34,7 +31,6 @@ export function Projects() {
                 }
             </div>
         </SectionProjects>
-
 
     );
 }

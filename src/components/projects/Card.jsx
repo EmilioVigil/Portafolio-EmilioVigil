@@ -9,11 +9,9 @@ export function Card({ img, title, description, deployLink, codeLink }) {
                 <CardDescription>{description}</CardDescription>
                 <Button>
                     <a href={deployLink} target={"_blank"} >Deploy</a>
-
                 </Button>
                 <Button>
                     <a href={codeLink} target={"_blank"} >Código</a>
-
                 </Button>
             </CardContent>
         </StyledCard>

@@ -28,10 +28,8 @@ export const ContactForm = () => {
                 console.log(error.text);
             });
 
-        // Reiniciamos el form
         form.current.reset();
 
-        // Llamamos la modal
         handleShow();
     };
 

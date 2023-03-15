@@ -8,6 +8,7 @@ import ScrollReveal from 'scrollreveal';
 import { ContactForm } from "./Form";
 
 function SectionContact() {
+
     const animation = useRef(null);
     useEffect(() => {
         ScrollReveal().reveal(animation.current, {
@@ -20,6 +21,7 @@ function SectionContact() {
         });
 
     }, [])
+
     return (
         <ContactContainer id="contact" ref={animation}>
             <h1>Enviame un mail de contacto :</h1>

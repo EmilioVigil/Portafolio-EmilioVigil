@@ -75,9 +75,6 @@ const Home = styled.section`
         }
     }
 
-
-
-    /* Responsive  */
     @media (max-width : 768px){
 
         padding: 2rem;

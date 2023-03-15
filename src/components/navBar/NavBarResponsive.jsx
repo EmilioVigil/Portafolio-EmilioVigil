@@ -1,12 +1,10 @@
 import React, { useState } from 'react';
 import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai";
 
-// Style
 import { NavContainer } from './Responsive.styled'
 
 export function NavBarResponsive() {
 
-    // STATE
     const [show, setShow] = useState(false);
 
     const handleClose = () => setShow(false);

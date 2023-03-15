@@ -7,7 +7,9 @@ import { useEffect, useRef } from 'react';
 
 
 export function Skills() {
+
     const animation = useRef(null);
+
     useEffect(() => {
         ScrollReveal().reveal(animation.current, {
             duration: 1000,

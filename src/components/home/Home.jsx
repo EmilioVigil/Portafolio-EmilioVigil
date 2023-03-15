@@ -34,14 +34,10 @@ export function SectionHome() {
                 </div>
                 <div className='home-icon-profile'>
                     <a href="https://github.com/EmilioVigil" target={'_blank'}>
-                        {/* ICONO */}
                         <GoMarkGithub />
-
                     </a>
                     <a href="https://www.linkedin.com/in/emilio-vigil-b764201a1/" target={'_blank'}>
-                        {/* ICONO */}
                         <ImLinkedin />
-
                     </a>
                     <a href={`${CV}`} download>
                         <button className='btn-dowload'>Descargar CV</button>
