@@ -2,7 +2,7 @@ import WeatherApp from '../images/WeatherApp.png'
 import pokeApp from '../images/pokeApp.jpg'
 import WineSuply from '../images/WineSuply.jpg'
 import ticTacToe from '../images/tic-tac-toe.png'
-
+import appnotas from '../images/AppNotas.png'
 export const projects = [
     {
         title: 'Wine Supply',
@@ -28,5 +28,12 @@ export const projects = [
         image: ticTacToe,
         deployLink: 'https://tic-tac-toe-kohl-ten.vercel.app/',
         codeLink: 'https://github.com/EmilioVigil/Tic-tac-toe'
+    },
+    {
+        title: 'App Notas',
+        description: 'Aplicación para crear notas, implemente este proyecto para trabajar con JWT, el usuario tiene un Login y un SignUp en caso que no este registrado, puede crear notas y borrarlas. Trabajé con ReactJs obteniendo información de una API realizada con express con una base de datos noRelacional (MongoDb). No tiene Deploy',
+        image: appnotas,
+        deployLink: 'https://github.com/EmilioVigil/AppNotas',
+        codeLink: 'https://github.com/EmilioVigil/AppNotas'
     }
 ]
