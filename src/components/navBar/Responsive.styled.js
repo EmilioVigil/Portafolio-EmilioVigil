@@ -1,57 +1,114 @@
-import styled from 'styled-components';
+import styled, { keyframes, css } from 'styled-components';
 
 
-const NavContainer = styled.div`
-    display : none;
-    
+const slideIn = keyframes`
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+`;
 
-    .nav-bar-btn-responsive{
-        border : none;
-        padding : .5rem;
-        margin-right: 1rem;
-        width: 3rem;
-        color : black;
-        background-color: transparent;
-        font-size : 2rem;
-        position: absolute;
-        right: 0;
-    }
+const slideOut = keyframes`
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+`;
 
-    @media (max-width : 768px){   
-        width: 100%;
-        display: block;
-        position : absolute;
-        padding-bottom: 2rem;
+const SidebarWrapper = styled.div`
+ display: none;
+ position: fixed;
+ top: 0;
+ left: 0;
+ height: 100vh;
+ width: 300px;
+ background-color: #18273E;
+ overflow: hidden;
+ z-index: 999;
+${(props) =>
+        props.isOpen &&
+        css`
+    display: block;
+      transition: transform 0.3s ease;
+      transform: translateX(0%);
+      animation: ${slideIn} 0.3s ease;
+    `}
 
-        .nav-container-responsive{
-            background-color: rgb(255, 255, 255);
-            display: flex;
-            flex-direction: column;
+  ${(props) =>
+        !props.isOpen &&
+        css`
+      transform: translateX(-100%);
+      animation: ${slideOut} 0.3s ease;
+    `}
 
-            
-            ul{
-                list-style: none;
-                
-                li{
-                    padding : 1rem;
-                }
-            }
+  @media (max-width: 768px) {
+    width: 100%;
+    position: fixed;
+    z-index: 999;
+    transform: translateX(-100%);
+    ${(props) =>
+        props.isOpen &&
+        css`
+        transform: translateX(0%);
+      `}
+  }
+`;
 
-        }
-        
+const CloseButton = styled.button`
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  color : #FF0000;
+`;
+
+const NavItem = styled.div`
+  display: flex;
+  align-items: center;
+  padding: 10px 20px;
+  color: #fff;
+  transition: background-color 0.3s ease;
+
+  a{
+    text-decoration: none;
+    color : #ffff;
+  }
+
+  &:hover {
+    background-color: #ddd;
+  }
 
 
-        .nav-bar-btn-x-responsive{
-            color : red;
-            border : none;
-            background-color: transparent;
-            font-size: 2rem;
-            position: absolute;
-            right: 0;
-            top : 0;
-        }
 
-    }
-`
+`;
 
-export { NavContainer }
+const Icon = styled.div`
+  margin-right: 10px;
+`;
+const ToggleButton = styled.button`
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  display: none;
+
+  @media (max-width: 768px) {
+    display: block;
+  position: fixed;
+  top: 20px;
+  right: 20px;
+    z-index: 1000;
+  }
+`;
+export {
+    SidebarWrapper,
+    CloseButton,
+    NavItem,
+    Icon,
+    ToggleButton
+}

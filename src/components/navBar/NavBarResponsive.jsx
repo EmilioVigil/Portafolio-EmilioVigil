@@ -1,45 +1,69 @@
-import React, { useState } from 'react';
-import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai";
+import React, { useState, useEffect } from 'react';
+import { FaUser, FaCode, FaLaptop, FaEnvelope, FaBars } from 'react-icons/fa';
+import { IoMdClose } from 'react-icons/io';
 
-import { NavContainer } from './Responsive.styled'
+import {
+    SidebarWrapper,
+    CloseButton,
+    NavItem,
+    Icon,
+    ToggleButton
+} from './Responsive.styled'
 
 export function NavBarResponsive() {
 
-    const [show, setShow] = useState(false);
+    const [isOpen, setIsOpen] = useState(false);
+    const [isFirstRender, setIsFirstRender] = useState(false);
 
-    const handleClose = () => setShow(false);
-    const handleShow = () => setShow(true);
+    const toggleNavbar = () => {
+        setIsOpen(!isOpen);
+    };
+
+
+    useEffect(() => {
+        setIsFirstRender(true);
+    }, []);
 
     return (
-        <NavContainer >
-            {
-                show ?
-                    <nav className='nav-container-responsive'>
-                        <button onClick={handleClose} className="nav-bar-btn-x-responsive">
-                            <AiOutlineClose />
-                        </button>
-                        <ul>
-                            <li>
-                                <a href="#home" onClick={handleClose} >Sobre Mi</a>
-                            </li>
-                            <li>
-                                <a href="#skills" onClick={handleClose} >Tecnologías</a>
-                            </li>
-                            <li>
-                                <a href="#projects" onClick={handleClose} >Proyectos</a>
-                            </li>
-                            <li>
-                                <a href="#contact" onClick={handleClose} >Contacto</a>
-                            </li>
-                        </ul>
-                    </nav>
-                    :
-                    <button onClick={handleShow} className="nav-bar-btn-responsive" >
-                        <AiOutlineMenu />
-                    </button >
+        <>
 
-            }
-        </NavContainer>
+            {isFirstRender && (
+                <ToggleButton onClick={toggleNavbar}>
+                    {isOpen ? '' : <FaBars size={24} />}
+                </ToggleButton>
+            )}
+
+            <SidebarWrapper isOpen={isOpen}>
+                <CloseButton onClick={toggleNavbar}>
+                    <IoMdClose size={24} />
+                </CloseButton>
+                <NavItem >
+                    <Icon>
+                        <FaUser />
+                    </Icon>
+                    <a href="#home" onClick={toggleNavbar}  >Sobre Mi</a>
+                </NavItem>
+                <NavItem>
+                    <Icon>
+                        <FaCode />
+                    </Icon>
+                    <a href="#skills" onClick={toggleNavbar}  >Tecnologías</a>
+                </NavItem>
+                <NavItem>
+                    <Icon>
+                        <FaLaptop />
+                    </Icon>
+                    <a href="#projects" onClick={toggleNavbar} >Proyectos</a>
+                </NavItem>
+                <NavItem>
+                    <Icon>
+                        <FaEnvelope />
+                    </Icon>
+                    <a href="#contact" onClick={toggleNavbar} >Contacto</a>
+                </NavItem>
+            </SidebarWrapper>
+
+        </>
     )
 }
 
